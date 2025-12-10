@@ -17,7 +17,17 @@ return the string below for given height=5
 *****  
            */
 public static String starStaircase(int height){
-    return "";
+    String stairs="";
+    for(int i = 0; i < height; i++){
+        for(int j = 0; j <= i; j++){
+            stairs += "*";
+        }
+        stairs += "\n";
+    }
+    
+        stairs=stairs.trim();
+    
+    return stairs;
 }
           /*
 return the string below for given height=5
@@ -29,7 +39,17 @@ return the string below for given height=5
            */
 
 public static String starStaircaseReverse(int height){
-    return "";
+    String reverseStairs="";
+    for(int i = height; i > 0; i--){
+        for(int j = 0; j < i; j++){
+            reverseStairs += "*";
+        }
+        reverseStairs += "\n";
+    }
+   
+        reverseStairs=reverseStairs.trim();
+    
+    return reverseStairs;
 }
             /*
 
@@ -41,7 +61,25 @@ width=5 height=5
 *****
           */
     public static String emptyBox(int width, int height) {
-        return "";
+        String box="";
+        if(width<2 || height<2){
+            return "";
+        }
+
+        for(int i=0;i<height;i++){
+            for(int j=0;j<width;j++){
+                if(i==0 || i==height-1 || j==0 || j==width-1){
+                    box+="*";
+                }else{
+                    box+=" ";
+                }
+            }
+            box+="\n";
+        }
+        
+            box=box.trim();
+        
+        return box;
     }
                     /*
 return the string below for word="HELLO" rows=5                    
@@ -54,7 +92,17 @@ OHELL
   i will provide a hint for this one if you get stuck.. use modulo
                 */
     public static String repeatRectangle(String word, int rows){
-        return "";
+        String rectangle="";
+        for(int i=0;i<rows;i++){
+            for(int j=0;j<word.length();j++){
+                rectangle+=word.charAt((i+j)%word.length());
+            }
+            rectangle+="\n";
+        }
+        
+            rectangle=rectangle.trim();
+        
+        return rectangle;
     }
 
 }
